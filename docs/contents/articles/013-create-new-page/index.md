@@ -38,9 +38,31 @@ This will allow you to easily switch off some pages in the future if needed.
 })();
 ```
 
-3) Then let's create empty html file called `my-new-page.html` inside of `src/app/pages/myNewPage`.
+3) Add the new `BlurAdmin.pages.myNewPage` module as a dependency of the `BlurAdmin.pages` module in `src/app/pages/pages.module.js`:
 
-4) Lastly let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
+```javascript
+  ...
+  
+  angular.module('BlurAdmin.pages', [
+    'ui.router',
+
+    'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.ui',
+    'BlurAdmin.pages.components',
+    'BlurAdmin.pages.form',
+    'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.charts',
+    'BlurAdmin.pages.maps',
+    'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.myNewPage',
+  ])
+  ...
+
+```
+
+4) Then let's create empty html file called `my-new-page.html` inside of `src/app/pages/myNewPage`.
+
+5) Lastly let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
 ```javascript
 (function () {
   'use strict';
